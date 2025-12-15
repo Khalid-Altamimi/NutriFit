@@ -31,9 +31,13 @@ As a user, I want to remove items from the cart so that I can update my order be
 ![ERD](./public/images/pic22.png)
 
 ![Wireframes](./public/images/pic33.png)
+
 ![Wireframes](./public/images/pic44.png)
+
 ![Wireframes](./public/images/pic55.png)
+
 ![Wireframes](./public/images/pic66.png)
+
 ![Wireframes](./public/images/pic77.png)
 
 
