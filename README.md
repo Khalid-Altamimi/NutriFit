@@ -1,22 +1,42 @@
-# NutriTrack-Application-Project
+# NutriFit-Application-Project
 
-As a user, I want to sign up and log in so that I can have a secure account to store my nutrition data.
-As a user, I want to create meals with a name, type (breakfast, lunch, dinner, snack), and calories so that I can track what I eat every day.
-As a user, I want to view all my meals so that I can see what I have eaten and my daily calorie total.
-As a user, I want to update my meals so that I can fix mistakes or adjust calorie information.
-As a user, I want to delete meals so that I can remove incorrect or unwanted entries from my record.
+Authentication:
+As a user, I want to sign up with my name, email, and password so that I can create a personal account.
+As a user, I want to log in and log out so that my data stays secure.
+As a user, I want to stay logged in during my session so that I don’t need to log in again on every page.
 
-![ERD](./public/images/pro-pic1.png)
-![Wireframes](./public/images/pro-pic2.png)
-![Routes](./public/images/pro-pic3.png)
-![Screenshot of App](./public/images/NutriTrack.png)
+NutriTrack (Meal Tracking):
+As a user, I want to add a meal with name, type (breakfast/lunch/dinner/snack), calories, carbs, and protein so that I can track my daily nutrition.
+As a user, I want to view all my meals so that I can review what I ate.
+As a user, I want to update a meal so that I can correct mistakes.
+As a user, I want to delete a meal so that I can remove incorrect entries.
+As a user, I want to see only my own meals so that my data stays private.
 
-NutriTrack is a meal and calorie tracking web application that allows users to log, edit, and manage their daily meals while reviewing their nutrition history. I created NutriTrack as a practical project to combine what I've learned about full-stack development, Especially focusing on CRUD functionality. The idea behind the app is to make it easier for people to stay mindful of their eating habits and promote healthier lifestyles.
+FitTrack (Workout Tracking):
+As a user, I want to add a workout with name/type, duration, and calories burned so that I can track my fitness activity.
+As a user, I want to view my workouts so that I can monitor my progress.
+As a user, I want to edit a workout so that I can fix mistakes.
+As a user, I want to delete a workout so that I can remove unwanted records.
+As a user, I want to see only my own workouts so that my progress remains private.
+
+Healthy Menu (Restaurant Menu):
+As a user, I want to browse menu categories (breakfast, lunch, dinner, snacks) so that I can find meals easily.
+As a user, I want to see each menu item with an image and nutrition info (calories, carbs, protein) so that I can choose healthy options.
+As a user, I want to add menu items to a cart so that I can place an order.
+As a user, I want to change item quantities in the cart so that I can order the correct amount.
+As a user, I want to remove items from the cart so that I can update my order before checkout.
+
+
+![ERD](./public/)
+![Wireframes](./public/images/pic11.png)
+![Wireframes](./public/images/pic22.png)
+
+NutriFit is a web-based health management application that combines meal tracking, fitness activity tracking, and a healthy restaurant menu into one system. The platform allows users to securely create accounts, log daily meals and nutritional values, track workouts, and browse categorized healthy meals with detailed information. Users can also place food orders using cash payment and receive confirmation notifications. By integrating these features in a simple and user-friendly interface, NutriFit helps users manage their nutrition and fitness goals effectively, making it suitable as a practical and professional graduation project.
 
 My App Link:http://localhost:3000/meals
 
-Attributions:https://img.freepik.com/premium-vector/fresh-green-red-apple-slices-white-background-healthy-eating-concept_1323048-102468.jpg
+Attributions:
 
 Technologies Used: -CSS -Javascript -Html
 
-Next steps: Actually if I have more time to develop in this project, I will improve the designing (style.css), i will put more pictures so the application looks better.
+Next steps: 
