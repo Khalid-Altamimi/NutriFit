@@ -1,0 +1,30 @@
+<nav class="navbar">
+    <div class="nav-left">
+        <a class="brand" href="/">NutriFit</a>
+    </div>
+
+
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/menu">Menu</a>
+
+
+        <% if (user) { %>
+            <a href="/meals">My Meals</a>
+            <a href="/fittrack">FitTrack</a>
+            <a href="/profile">Profile</a>
+        <% } %>
+    </div>
+
+
+    <div class="nav-right">
+        <% if (user) { %>
+          <span class="nav-user">Hi, <%= user.username %></span>
+          <a href="/auth/sign-out"><button>Sign-out</button></a>
+       <% } else { %> 
+        <a href="/auth/sign-in"><button>Sign in</button></a>
+        <a href="/auth/sign-up"><button>Sign up</button></a>
+       <% } %>
+    </div>
+</nav>
