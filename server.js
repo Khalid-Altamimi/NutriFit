@@ -17,6 +17,8 @@ const passUserToView = require('./middleware/pass-user-to-view.js');
 const authController = require('./controllers/auth.js');
 const mealsRoutes = require('./routes/meals.js');
 const menuRoutes = require('./routes/menu.js');
+const pagesRoutes = require('./routes/pages.js');
+
 
 
 // Set the port from environment variable or default to 3000
@@ -58,6 +60,9 @@ app.use('/auth', authController);
 app.use('/meals', mealsRoutes);
 
 app.use('/menu', menuRoutes);
+
+app.use('/', pagesRoutes);
+
 
 
 
