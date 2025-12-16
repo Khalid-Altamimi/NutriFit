@@ -116,3 +116,43 @@ img {
   margin-top: 10px;
   font-size: 1.1rem;
 }
+
+
+.menu-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0 20px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2x2 */
+  gap: 18px;
+  max-width: 900px;
+}
+
+.menu-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  border-left: 5px solid #2d6a4f;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.menu-card h3 {
+  margin: 10px 0 6px;
+  color: #2d6a4f;
+}
+
+.menu-card p {
+  margin: 0;
+  font-size: 1rem;
+}
