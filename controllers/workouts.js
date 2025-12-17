@@ -32,10 +32,15 @@ const create = async (req, res) => {
 
 const edit = async (req, res) => {
     try {
-        const workout = await Workout.findOne({_id: req.params.id, user: req.session.user._id});
-            if (!workout) return res.redirect('/workouts');
-            res.render('workouts/edit.ejs' , { workout })
-    } catch (err) {
+        const workout = await Workout.findOne({
+            _id: req.params.id, 
+            user: req.session.user._id,
+        });
+
+        if (!workout) return res.redirect('/workouts');
+
+        res.render('workouts/edit.ejs' , { workout });
+    } catch (err) { 
         res.status(400).send(' Workout not found');
     }
 };
@@ -49,8 +54,8 @@ const update = async (req, res) => {
                 name: req.body.name,
                 duration: req.body.duration,
                 caloriesBurned: req.body.caloriesBurned,
-                date: req.body.date,
-            }
+            },
+            { new: true }
         );
         res.redirect('/workouts');
      } catch (err) {
