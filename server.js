@@ -18,7 +18,7 @@ const authController = require('./controllers/auth.js');
 const mealsRoutes = require('./routes/meals.js');
 const menuRoutes = require('./routes/menu.js');
 const pagesRoutes = require('./routes/pages.js');
-const WorkoutsRoutes = require('./routes/workouts.js');
+const workoutsRoutes = require('./routes/workouts.js');
 
 
 
@@ -64,7 +64,7 @@ app.use('/menu', menuRoutes);
 
 app.use('/', pagesRoutes);
 
-app.use('/workouts', WorkoutsRoutes);
+app.use('/workouts', workoutsRoutes);
 
 
 

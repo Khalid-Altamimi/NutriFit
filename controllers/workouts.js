@@ -1,12 +1,24 @@
-const workout = require('../models/workout');
 const Workout = require('../models/workout');
 
 const index = async (req, res) => {
     try {
-        const workouts = await Workout.find({user: req.session.user._id}).sort({createdAt: -1});
-        res.render('workouts/index.ejs' , {workouts});
+        const workouts = await Workout.find({
+            user: req.session.user._id,
+        }).sort({date: -1});
+
+        const totalWorkouts = workouts.length;
+
+        const totalCaloriesBurned = workouts.reduce(
+            (sum, workout) => sum + workout.caloriesBurned,
+            0
+        );
+        res.render('workouts/index.ejs' , {
+            workouts,
+            totalWorkouts,
+            totalCaloriesBurned,
+        });
     } catch (error) {
-        res.status(500).send('Error fetching workouts');
+        res.status(500).send('Error loading workouts');
     }
 };
 
@@ -28,6 +40,23 @@ const create = async (req, res) => {
         res.status(400).send('Error creating workout');
     }
 };
+
+
+const show = async (req, res) => {
+    try {
+        const workout = await Workout.findOne({
+         _id: req.params.id,
+        user: req.session.user._id,
+        });
+
+        if (!workout) return res.redirect('/workouts');
+
+        res.render('workouts/show.ejs', { workout });
+    } catch (err) {
+        res.status(400).send(' Workout not found');
+    }
+};
+
 
 
 const edit = async (req, res) => {
@@ -77,21 +106,6 @@ const destroy = async (req, res) => {
     }
 };
 
-
-const show = async (req, res) => {
-    try {
-        const Workout = await Workout.findOne({
-        _id: req.params.id,
-        user: req.session.user._id,
-        });
-
-        if (!workout) return res.redirect('/workouts');
-
-        res.render('/workouts/show.ejs', { workout });
-    } catch (err) {
-        res.status(400).send(' Workout not found');
-    }
-};
 
 module.exports = {
     index,
