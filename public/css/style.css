@@ -1,163 +1,107 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 0;
-    background-color: #f0f9f4;
-    color: #333;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-color: #f0f9f4;
+  color: #333;
 }
 
 h1, h2 {
-    color: #2d6a4f;
-}
-
- h1 {
-    font-size: 4rem;
-    font-weight: bold;
-    margin-top: 15px;
-}
-
-h2{
-    font-size: 2rem;
-    margin-top: 5px;
-}
-
-p.description {
-    font-size: 1.4rem;
-    line-height: 1.6;
-    margin-top: 8px;
-    margin-bottom: 20px;
-}
-
-a {
-    color: #2a9d8f;
-    text-decoration: none;
-}
-
-a:hover{
-    text-decoration: underline;
-}
-
-form {
-    margin: 15px 0;
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-}
-
-input, select, button {
-    margin-top: 5px;
-    padding: 8px;
-    font-size: 14px;
-}
-
-button {
-    margin-top: 0;
-    background-color: #2d6a4f;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 4px;
-    padding: 10px 18px;
-    font-size: 1rem;
-    margin: 5px;
-}
-
-button:hover {
-    background-color: #1b4332;
-}
-
-ul {
-    list-style-type:none ;
-    padding: 0;
-}
-
-li {
-    background: white;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border-left: 5px solid #2d6a4f;
-}
-
-.imageContainer {
-    max-width: 40vw;
-    max-height: 40vh;
-}
-
-img {
-    width: 100%;
-    height: 100%;
-}
-
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-  max-width: 900px;
-}
-
-.menu-card {
-  background: white;
-  border-radius: 10px;
-  padding: 12px;
-  border-left: 5px solid #2d6a4f;
-}
-
-.menu-card img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.menu-card p {
-  margin-top: 10px;
-  font-size: 1.1rem;
-}
-
-
-.menu-links {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin: 10px 0 20px;
-}
-
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2x2 */
-  gap: 18px;
-  max-width: 900px;
-}
-
-.menu-card {
-  background: #fff;
-  border-radius: 10px;
-  padding: 12px;
-  border-left: 5px solid #2d6a4f;
-}
-
-.menu-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 8px;
-  display: block;
-}
-
-.menu-card h3 {
-  margin: 10px 0 6px;
   color: #2d6a4f;
 }
 
-.menu-card p {
-  margin: 0;
-  font-size: 1rem;
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-top: 15px;
 }
 
+h2 {
+  font-size: 2rem;
+  margin-top: 5px;
+}
 
+p.description {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #2a9d8f;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+form {
+  margin: 15px 0;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, select, button {
+  margin-top: 5px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+button {
+  margin-top: 0;
+  background-color: #2d6a4f;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #1b4332;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: white;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border-left: 5px solid #2d6a4f;
+}
+
+/* ✅ HOME PAGE IMAGE ONLY */
+.imageContainer {
+  max-width: 40vw;
+  max-height: 40vh;
+}
+
+/* ✅ FIX: global images should NOT be height:100% */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ✅ If you want the home page image to fill its container neatly */
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ✅ NAVBAR */
 .navbar {
   display: flex;
   align-items: center;
@@ -195,4 +139,59 @@ img {
 .nav-user {
   font-weight: 600;
   color: #2d6a4f;
+}
+
+/* ✅ MENU LINKS (Breakfast / Lunch / Dinner / Snack buttons/links) */
+.menu-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0 20px;
+}
+
+/* ✅ MENU 2×2 GRID */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  max-width: 900px;
+  margin-top: 20px;
+}
+
+.menu-card {
+  background: white;
+  border-radius: 10px;
+  border-left: 5px solid #2d6a4f;
+  padding: 12px;
+  overflow: hidden;
+}
+
+/* ✅ THIS controls the menu images size (not huge anymore) */
+.menu-card img {
+  width: 100%;
+  height: 180px;       /* change to 160px smaller, 220px bigger */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.menu-card h3 {
+  margin: 10px 0 6px;
+  color: #2d6a4f;
+}
+
+.menu-card p {
+  margin: 8px 0 0;
+  font-size: 1rem;
+}
+/* FORCE menu images size (works even if classes are missing) */
+#menu img,
+.menu img,
+.menu-page img,
+.menu-grid img,
+.menu-card img {
+  width: 100% !important;
+  height: 180px !important;
+  object-fit: cover !important;
+  border-radius: 8px;
+  display: block;
 }
