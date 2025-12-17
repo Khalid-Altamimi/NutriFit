@@ -22,6 +22,9 @@
         <label>Calories Burned</label>
         <input type="number" name="caloriesBurned" min="0" value="<%= workout.caloriesBurned %>" required />
 
+        <label>Date</label>
+        <input type="date" name="date" value="<%= workout.date.toISOString().slice(0, 10) %>" required />
+
         <button type="submit">Update</button>
     </form>
 
