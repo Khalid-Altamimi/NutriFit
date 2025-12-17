@@ -9,24 +9,16 @@
 <body>
 <%- include('../partials/nav.ejs') %>
     <h1>Workout Details</h1>
+    <h2><%= Workout.name %></h2>
 
 
-    <ul>
-        <li><strong>Name:</strong> <%= workout.name %></li>
-        <li><strong>Duration:</strong> <%= workout.duration %> minutes</li>
-        <li><strong>Calories Burned:</strong> <%= workout.caloriesBurned %> kcal</li>
-        <li><strong>Date:</strong> <%= workout.date.toDateString() %></li>
-    </ul>
 
+    
+    <p><strong>Duration:</strong> <%= workout.duration %> min</p>
+    <p><strong>Calories Burned:</strong> <%= workout.caloriesBurned %> kcal</p>
 
     <p>
         <a href="/workouts/<%= workout._id %>/edit"><button>Edit</button></a>
-
-
-        <form action="/workouts/<%= workout.id %>?_method=DELETE" method="POST" style="display: inline;">
-            <button type="submit">Delete</button>
-        </form>
-
         <a href="/workouts"><button>Back</button></a>
     </p>
 
