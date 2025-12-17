@@ -67,9 +67,12 @@ const update = async (req, res) => {
 
 const destroy = async (req, res) => {
     try {
-        await Workout.findOneAndDelete({_id: req.params.id, user: req.session.user._id});
-            res.redirect('/workouts' );
-    } catch (err) {
+        await Workout.findOneAndDelete({
+            _id: req.params.id, 
+            user: req.session.user._id
+        });
+        res.redirect('/workouts' );
+    } catch (error) {
         res.status(400).send(' Error deleting workout');
     }
 };
