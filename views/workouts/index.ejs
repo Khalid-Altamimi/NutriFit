@@ -22,7 +22,7 @@
     <ul>
         <% workouts.forEach(workout => { %> 
         <li>
-            <strong><%= workout.name %></strong>
+            <a href="/workouts/<%= workout._id %>"><strong><%= workout.name %></strong></a>
             (<%= workout.duration %> min - <%= workout.caloriesBurned %> kcal)
 
             <a href="/workouts/<%= workout._id %>/edit"><button>Edit</button></a>

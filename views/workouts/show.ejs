@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Details</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<%- include('../partials/nav.ejs') %>
+    <h1>Workout Details</h1>
+
+
+    <ul>
+        <li><strong>Name:</strong> <%= workout.name %></li>
+        <li><strong>Duration:</strong> <%= workout.duration %> minutes</li>
+        <li><strong>Calories Burned:</strong> <%= workout.caloriesBurned %> kcal</li>
+        <li><strong>Date:</strong> <%= workout.date.toDateString() %></li>
+    </ul>
+
+
+    <p>
+        <a href="/workouts/<%= workout._id %>/edit"><button>Edit</button></a>
+
+
+        <form action="/workouts/<%= workout.id %>?_method=DELETE" method="POST" style="display: inline;">
+            <button type="submit">Delete</button>
+        </form>
+
+        <a href="/workouts"><button>Back</button></a>
+    </p>
+
+</body>
+</html>

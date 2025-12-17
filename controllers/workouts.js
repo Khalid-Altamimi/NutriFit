@@ -1,3 +1,4 @@
+const workout = require('../models/workout');
 const Workout = require('../models/workout');
 
 const index = async (req, res) => {
@@ -69,10 +70,26 @@ const destroy = async (req, res) => {
 };
 
 
+const show = async (req, res) => {
+    try {
+        const Workout = await Workout.findOne({
+        _id: req.params.id,
+        user: req.session.user._id,
+        });
+
+        if (!workout) return res.redirect('/workouts');
+
+        res.render('/workouts/show.ejs', { workout });
+    } catch (err) {
+        res.status(400).send(' Workout not found');
+    }
+};
+
 module.exports = {
     index,
     new: newWorkout,
     create,
+    show,
     edit,
     update,
     destroy,
