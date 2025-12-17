@@ -2,6 +2,10 @@
     <a href="/">Home</a>
 
     <% if (user) { %>
+      <span style="margin-right: 10px;">
+        Welcome, <strong><%= user.username %></strong>
+      </span>
+
         <a href="/menu">Menu</a>
         <a href="/meals">My Meals</a>
         <a href="/workouts">FitTrack</a>

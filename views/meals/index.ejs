@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Meals</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <%- include('../partials/nav.ejs') %>
-    <link rel="stylesheet" href="/css/style.css">
+
     <h1>Meal Tracker</h1>
 
     <p>
@@ -21,10 +22,10 @@
     <ul>
         <% meals.forEach(meal => { %>
             <li>
-                <strong><%= meal.name %></strong>
+                <a href="/meals/<%= meal._id %>"><strong><%= meal.name %></strong></a>
                 (<%= meal.type %> - <%= meal.calories %> kcal)
 
-                <a href="/meals/<%= meal._id %>/edit">Edit</a>
+                <a href="/meals/<%= meal._id %>/edit"><button>Edit</button></a>
 
                 <form action="/meals/<%= meal._id %>?_method=DELETE" method="POST" style="display: inline;">
                     <button type="submit">Delete</button>
@@ -36,7 +37,7 @@
     <p>no meals yet. Start by <a href="/meals/new">adding one</a>.</p>
 <% } %>
 
-<p><a href="/">Back to Home</a></p>
+<p><a href="/"><button>Back to Home</button></a></p>
 
 </body>
 </html>
