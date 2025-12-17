@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Workout</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+    <h1>FitTrack</h1>
+    <h2>Edit Workout</h2>
+
+
+    <form action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
+        <label>Workout name</label>
+        <input type="text" name="name" value="<%= workout.name %>" required />
+
+        <label>Duration (minutes)</label>
+        <input type="number" name="duration" min="1" value="<%= workout.duration %>" required />
+
+        <label>Calories Burned</label>
+        <input type="number" name="caloriesBurned" min="0" value="<%= workout.caloriesBurned %>" required />
+
+        <button type="submit">Update</button>
+    </form>
+
+    <p><a href="/workouts"><button>Back</button></a></p>
+
+</body>
+</html>

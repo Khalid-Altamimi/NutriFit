@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack - Workouts</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+    <h1>FitTrack</h1>
+
+    <h2>My Workouts</h2>
+
+    <p>
+        <a href="/workouts/new"><button>Add Workout</button></a>
+        <a href="/"><button>Home</button></a>
+    </p>
+
+
+    <% if (workouts.length > 0) { %>
+    <ul>
+        <% workouts.forEach(workout => { %> 
+        <li>
+            <strong><%= workout.name %></strong>
+            (<%= workout.duration %> min - <%= workout.caloriesBurned %> kcal)
+
+            <a href="/workouts/<%= workout._id %>/edit"><button>Edit</button></a>
+
+            <form action="/workouts/<%= workout._id %>?_method=DELETE" method="POST" style="display: inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+        <% }) %>
+    </ul>
+    <% } else { %>
+      <p>No workouts yet. Start by adding one!</p>
+    <% } %>
+
+</body>
+</html>

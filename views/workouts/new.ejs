@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Workout</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+    <h1>FitTrack</h1>
+    <h2>Add Workout</h2>
+
+
+    <form action="/workouts" method="POST">
+        <label>Workout name</label>
+        <input type="text" name="name" required />
+
+        <label>Duration (minutes)</label>
+        <input type="number" name="duration" min="1" required />
+
+        <label>calories Burned</label>
+        <input type="number" name="caloriesBurned" min="0" required />
+
+        <button type="submit">Create</button>
+    </form>
+
+    <p><a href="/workouts"><button>Back</button></a></p>
+
+</body>
+</html>
