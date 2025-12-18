@@ -12,11 +12,9 @@
     <h1>Meal Tracker</h1>
 
     <p>
-        Logged in as <strong><%= user.username %></strong>
-        <a href="/auth/sign-out">Sign out</a>
+        <a href="/meals/new"><button>Add a new Meal</button></a>
+        <a href="/"><button>Home</button></a>
     </p>
-
-    <p><a href="/meals/new">Add a new Meal</a></p>
 
     <% if (meals.length > 0) { %>
     <ul>
@@ -34,10 +32,8 @@
         <% }) %>
     </ul>
 <% } else { %> 
-    <p>no meals yet. Start by <a href="/meals/new">adding one</a>.</p>
+    <p>No meals yet. Start by adding one!</p>
 <% } %>
-
-<p><a href="/"><button>Back to Home</button></a></p>
 
 </body>
 </html>
