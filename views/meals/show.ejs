@@ -18,13 +18,9 @@
     <p><strong>Calories:</strong><%= meal.calories %> kcal</p>
 
     <p>
-        <a href="/meals/<%= meal._id %>/edit">Edit</a>
-
-        <form action="/meals/<%= meal._id %>?_method=DELETE" method="POST" style="display: inline;">
-            <button type="submit">Delete</button>
-        </form>
-
+        <a href="/meals/<%= meal._id %>/edit"><button>Edit</button></a>
         <a href="/meals"><button>Back</button></a>
+
     </p>
 
 </body>
