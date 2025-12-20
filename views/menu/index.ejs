@@ -9,13 +9,50 @@
 <%- include('../partials/nav.ejs') %>
 
     <h1>Healthy Menu</h1>
-    <p>Choose a Category to view 4 meals in a 2x2 grid.</p>
+    <p>Choose a Category to view 4 meals in a clean 2x2 grid with nutrition details.</p>
 
-    <div class="category-links">
+    <div class="menu-links">
         <a href="/menu/breakfast"><button>Breakfast</button></a>
         <a href="/menu/lunch"><button>Lunch</button></a>
         <a href="/menu/dinner"><button>Dinner</button></a>
         <a href="/menu/snack"><button>Snack</button></a>
+    </div>
+
+
+    <h2>Categories Preview</h2>
+
+    <div class="menu-grid">
+        <div class="menu-card">
+            <img src="/images/breakfast-1.jpg" alt="Breakfast Preview">
+            <h3>Breakfast</h3>
+            <p>Start your day with healthy energy.</p>
+            <a href="/menu/breakfast"><button>View Breakfast</button></a>
+        </div>
+
+
+        <div class="menu-card">
+            <img src="/images/lunch-1.jpg" alt="Lunch Preview">
+            <h3>Lunch</h3>
+            <p>Balanced meals for mid-day.</p>
+            <a href="/menu/lunch"><button>View Lunch</button></a>
+        </div>
+
+
+        <div class="menu-card">
+            <img src="/images/dinner-1.jpg" alt="Dinner Preview">
+            <h3>Dinner</h3>
+            <p>Protein-focused meals for recovery.</p>
+            <a href="/menu/dinner"><button>View Dinner</button></a>
+        </div>
+
+
+        <div class="menu-card">
+            <img src="/images/snack-1.jpg" alt="Snack Preview">
+            <h3>Snacks</h3>
+            <p>Light options between meals.</p>
+            <a href="/menu/snack"><button>View Snacks</button></a>
+        </div>
+
     </div>
 
 </body>
