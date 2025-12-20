@@ -1,3 +1,6 @@
+/* =========================
+   Global
+   ========================= */
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
@@ -81,27 +84,30 @@ li {
   border-left: 5px solid #2d6a4f;
 }
 
-/* ✅ HOME PAGE IMAGE ONLY */
-.imageContainer {
-  max-width: 40vw;
-  max-height: 40vh;
-}
-
-/* ✅ FIX: global images should NOT be height:100% */
+/* ✅ Global image behavior (safe everywhere) */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* ✅ If you want the home page image to fill its container neatly */
+/* =========================
+   Home Page Image
+   ========================= */
+.imageContainer {
+  max-width: 40vw;
+  max-height: 40vh;
+}
+
 .imageContainer img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* ✅ NAVBAR */
+/* =========================
+   Navbar
+   ========================= */
 .navbar {
   display: flex;
   align-items: center;
@@ -141,15 +147,21 @@ img {
   color: #2d6a4f;
 }
 
-/* ✅ MENU LINKS (Breakfast / Lunch / Dinner / Snack buttons/links) */
-.menu-links {
+/* =========================
+   Menu Page (Category Buttons)
+   ========================= */
+.menu-links,
+.category-links,
+.menu-category-buttons {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   margin: 10px 0 20px;
 }
 
-/* ✅ MENU 2×2 GRID */
+/* =========================
+   Menu 2×2 Grid + Cards
+   ========================= */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -166,10 +178,10 @@ img {
   overflow: hidden;
 }
 
-/* ✅ THIS controls the menu images size (not huge anymore) */
+/* ✅ Menu images size (not huge) */
 .menu-card img {
   width: 100%;
-  height: 180px;       /* change to 160px smaller, 220px bigger */
+  height: 180px; /* 160 smaller, 220 bigger */
   object-fit: cover;
   border-radius: 8px;
 }
@@ -182,16 +194,4 @@ img {
 .menu-card p {
   margin: 8px 0 0;
   font-size: 1rem;
-}
-/* FORCE menu images size (works even if classes are missing) */
-#menu img,
-.menu img,
-.menu-page img,
-.menu-grid img,
-.menu-card img {
-  width: 100% !important;
-  height: 180px !important;
-  object-fit: cover !important;
-  border-radius: 8px;
-  display: block;
 }
