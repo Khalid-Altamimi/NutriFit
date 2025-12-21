@@ -1,38 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Meal</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-
-<%- include('../partials/nav.ejs') %>
-
-    <h1>Edit Meal</h1>
-
-    <form action="/meals/<%= meal._id %>?_method=PUT" method="POST">
-        <label>Name</label>
-        <input type="text" name="name" value="<%= meal.name %>" required />
-
-        <label>Type</label>
-        <select name="type" required>
-            <option value="breakfast" <%= meal.type === 'breakfast' ? 'selected' : '' %>>Breakfast</option>
-            <option value="lunch" <%= meal.type === 'lunch' ? 'selected' : '' %>>lunch</option>
-            <option value="dinner" <%= meal.type === 'dinner' ? 'selected' : '' %>>dinner</option>
-            <option value="snack" <%= meal.type === 'snack' ? 'selected' : '' %>>snack</option>  
-        </select>
-
-        <label>Calories</label>
-        <input type="number" name="calories" value="<%= meal.calories %>" min="0" required />
-
-        <button type="submit">Update Meal</button> 
-    </form>
-
-    <p>
-        <a href="/meals/<%= meal._id %>"><button>Cancel</button></a>
-    </p>
-    
-</body>
-</html>
+<%- include('../partials/layout.ejs', {
+    title: 'Edit Meal',
+    page: '../meals/_edit.ejs'
+}) %>

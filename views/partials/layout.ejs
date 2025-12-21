@@ -1,0 +1,16 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <%- include('./head.ejs') %>
+            <title><%= title || 'NutriFit' %></title>
+        </head>
+        <body>
+
+            <%- include('./nav.ejs') %>
+
+            <main class="container">
+                <%- include(page) %>
+            </main>
+            
+        </body>
+        </html> 

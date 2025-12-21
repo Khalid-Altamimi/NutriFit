@@ -1,0 +1,22 @@
+<h1>Add a New Workout</h1>
+
+
+    <form action="/workouts" method="POST">
+        <label>Name</label>
+        <input type="text" name="name" required />
+
+        <label>Duration (minutes)</label>
+        <input type="number" name="duration" min="1" required />
+
+        <label>Calories Burned</label>
+        <input type="number" name="caloriesBurned" min="0" required />
+
+        <label>Date</label>
+        <input type="date" name="date" required />
+
+        <button type="submit">Create Workout</button>
+    </form>
+
+    <p>
+        <a href="/workouts"><button>Back</button></a>
+    </p>

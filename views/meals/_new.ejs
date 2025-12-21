@@ -1,0 +1,26 @@
+<h1>Add a New Meal</h1>
+
+    <form action="/meals" method="POST">
+        <label>Name</label>
+        <input type="text" name="name" required />
+
+        <label>Type</label>
+        <select name="type" required>
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option>
+            <option value="snack">Snack</option>
+        </select>
+
+        <label>Calories</label>
+        <input type="number" name="calories" min="0" required />
+
+        <button type="submit">Create Meal</button>
+    </form>
+
+    <p>
+        <a href="/meals"><button>Back</button></a>
+    </p>   
+    
+</body>
+</html>

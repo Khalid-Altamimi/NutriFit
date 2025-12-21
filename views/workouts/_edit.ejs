@@ -1,0 +1,23 @@
+<h1>Edit Workout</h1>
+
+
+    <form action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
+        <label>Name</label>
+        <input type="text" name="name" value="<%= workout.name %>" required />
+
+        <label>Duration (minutes)</label>
+        <input type="number" name="duration" min="1" value="<%= workout.duration %>" required />
+
+        <label>Calories Burned</label>
+        <input type="number" name="caloriesBurned" min="0" value="<%= workout.caloriesBurned %>" required />
+
+        <label>Date</label>
+        <input type="date" name="date" value="<%= workout.date.toISOString(). slice(0,10) %>" required />
+
+
+        <button type="submit">Update Workout</button>
+    </form>
+
+    <p>
+        <a href="/workouts"><button>Back</button></a>
+    </p>

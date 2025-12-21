@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meal Details</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-
-<%- include('../partials/nav.ejs') %>
-
-    <h1>Meal Details</h1>
-
-    <h2><%= meal.name %></h2>
-
-    <p><strong>Type:</strong><%= meal.type %></p>
-    <p><strong>Calories:</strong><%= meal.calories %> kcal</p>
-
-    <p>
-        <a href="/meals/<%= meal._id %>/edit"><button>Edit</button></a>
-        <a href="/meals"><button>Back</button></a>
-
-    </p>
-
-</body>
-</html>
+<%- include('../partials/layout.ejs', {
+    title: 'Meals Details',
+    page: '../meals/_show.ejs'
+}) %>

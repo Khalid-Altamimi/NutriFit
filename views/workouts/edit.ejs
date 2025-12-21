@@ -1,32 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Workout</title>
-    <link rel="stylesheet" href="/css/style.css" />
-</head>
-<body>
-<%- include('../partials/nav.ejs') %>
-    <h1>Edit Workout</h1>
-
-
-    <form action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
-        <label>Name</label>
-        <input type="text" name="name" value="<%= workout.name %>" required />
-
-        <label>Duration (minutes)</label>
-        <input type="number" name="duration" min="1" value="<%= workout.duration %>" required />
-
-        <label>Calories Burned</label>
-        <input type="number" name="caloriesBurned" min="0" value="<%= workout.caloriesBurned %>" required />
-
-        <button type="submit">Update Workout</button>
-    </form>
-
-    <p>
-        <a href="/workouts/<%= workout._id %>"><button>Cancel</button></a>
-    </p>
-
-</body>
-</html>
+<%- include('../partials/layout.ejs', {
+  title: 'Edit Workouts',
+  page: '../workouts/_edit.ejs'
+}) %>

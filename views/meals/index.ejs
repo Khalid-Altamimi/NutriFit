@@ -1,45 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Meals</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-<%- include('../partials/nav.ejs') %>
-
-    <h1>Meal Tracker</h1>
-
-    <p>
-        <strong>Total meals:</strong> <%= totalMeals %> <br>
-        <strong>Total calories:</strong> <%= totalCalories %> kcal <br>
-
-    </p>
-
-    <p>
-        <a href="/meals/new"><button>Add a new Meal</button></a>
-        <a href="/"><button>Home</button></a>
-    </p>
-
-    <% if (meals.length > 0) { %>
-    <ul>
-        <% meals.forEach(meal => { %>
-            <li>
-                <a href="/meals/<%= meal._id %>"><strong><%= meal.name %></strong></a>
-                (<%= meal.type %> - <%= meal.calories %> kcal)
-
-                <a href="/meals/<%= meal._id %>/edit"><button>Edit</button></a>
-
-                <form action="/meals/<%= meal._id %>?_method=DELETE" method="POST" style="display: inline;">
-                    <button type="submit">Delete</button>
-                </form>
-            </li>        
-        <% }) %>
-    </ul>
-<% } else { %> 
-    <p>No meals yet. Start by adding one!</p>
-<% } %>
-
-</body>
-</html>
+<%- include('../partials/layout.ejs', {
+    title: 'My Meals',
+    page: '../meals/_index.ejs'
+}) %>

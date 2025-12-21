@@ -1,0 +1,43 @@
+<h1>FitTrack</h1>
+<h2>My Workouts</h2>
+
+<div class="summary-box">
+  <p><strong>Total Workouts:</strong> <%= totalWorkouts %></p>
+  <p><strong>Total Calories Burned:</strong> <%= totalCaloriesBurned %> kcal</p>
+</div>
+
+<p>
+  <a href="/workouts/new">
+    <button>Add Workout</button>
+  </a>
+  <a href="/">
+    <button>Home</button>
+  </a>
+</p>
+
+<% if (workouts.length > 0) { %>
+  <ul>
+    <% workouts.forEach(workout => { %>
+      <li>
+        <a href="/workouts/<%= workout._id %>">
+          <strong><%= workout.name %></strong>
+        </a>
+        (<%= workout.duration %> min - <%= workout.caloriesBurned %> kcal)
+
+        <a href="/workouts/<%= workout._id %>/edit">
+          <button>Edit</button>
+        </a>
+
+        <form
+          action="/workouts/<%= workout._id %>?_method=DELETE"
+          method="POST"
+          style="display:inline;"
+        >
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+<% } else { %>
+  <p>No workouts yet. Start by adding one!</p>
+<% } %>

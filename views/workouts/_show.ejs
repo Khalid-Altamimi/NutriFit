@@ -1,0 +1,14 @@
+<h1>Workout Details</h1>
+
+<h2><%= Workout.name %></h2>
+
+
+
+    
+    <p><strong>Duration:</strong> <%= workout.duration %> min</p>
+    <p><strong>Calories Burned:</strong> <%= workout.caloriesBurned %> kcal</p>
+
+    <p>
+        <a href="/workouts/<%= workout._id %>/edit"><button>Edit</button></a>
+        <a href="/workouts"><button>Back</button></a>
+    </p>

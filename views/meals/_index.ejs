@@ -1,0 +1,35 @@
+<h1>Meal Tracker</h1>
+
+    <p>
+        Logged in as <strong><%= user.username %></strong>
+        <strong>Total calories:</strong> <%= totalCalories %> kcal<br>
+
+    </p>
+
+    <p>
+        <a href="/meals/new"><button>Add Meal</button></a>
+    </p>
+
+    <% if (meals.length > 0) { %>
+    <ul>
+        <% meals.forEach(meal => { %>
+            <li>
+                <strong><%= meal.name %></strong>
+                (<%= meal.type %> - <%= meal.calories %> kcal)
+
+                <a href="/meals/<%= meal._id %>/edit">
+                    <button>Edit</button>
+                </a>
+
+                <form action="/meals/<%= meal._id %>?_method=DELETE" method="POST" style="display: inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>        
+        <% }) %>
+    </ul>
+<% } else { %> 
+    <p>No meals yet.</p>
+<% } %>
+
+</body>
+</html>

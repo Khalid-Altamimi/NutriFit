@@ -1,0 +1,16 @@
+ <h1>Meal Details</h1>
+
+    <h2><%= meal.name %></h2>
+
+    <p><strong>Name:</strong><%= meal.name %></p>
+    <p><strong>Type:</strong><%= meal.type %></p>
+    <p><strong>Calories:</strong><%= meal.calories %> kcal</p>
+
+    <p>
+        <a href="/meals/<%= meal._id %>/edit"><button>Edit</button></a>
+        <a href="/meals"><button>Back</button></a>
+
+    </p>
+
+</body>
+</html>
