@@ -1,33 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <%- include('../partials/head.ejs') %>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Checkout</title>
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
   <%- include('../partials/nav.ejs') %>
 
   <h1>Checkout</h1>
 
-  <h2>Payment Method: Cash</h2>
+  <% if (!cart || cart.items.length === 0) { %>
+    <p>Your cart is empty.</p>
+    <a href="/menu"><button>Back to Menu</button></a>
+  <% } else { %>
 
-  <p><strong>Total:</strong> <%= cart.totalPrice.toFixed(2) %> BHD</p>
+    <h2>Order Summary</h2>
 
-  <form action="/orders" method="POST">
-    <label for="deliveryLocation">Delivery Location:</label>
-    <input
-      id="deliveryLocation"
-      name="deliveryLocation"
-      type="text"
-      placeholder="Example: Manama, Building 12, Flat 3"
-      required
-    />
+    <ul>
+      <% cart.items.forEach(item => { %>
+        <li>
+          <strong><%= item.name %></strong>
+          - <%= item.qty %> x <%= item.price.toFixed(3) %> BHD
+          = <strong><%= (item.price * item.qty).toFixed(3) %> BHD</strong>
 
-    <button type="submit">Place Order</button>
-  </form>
+          <form action="/cart/remove" method="POST" style="display:inline;">
+            <input type="hidden" name="id" value="<%= item.id %>" />
+            <button type="submit">Remove</button>
+          </form>
+        </li>
+      <% }) %>
+    </ul>
 
-  <p>
-    <a href="/cart"><button type="button">Back to Cart</button></a>
-  </p>
+    <p>
+      <strong>Total:</strong> <%= cart.totalPrice.toFixed(3) %> BHD
+    </p>
+
+    <h2>Payment Method</h2>
+    <p>Cash on delivery / pickup (الدفع كاش)</p>
+
+    <form action="/orders" method="POST">
+      <button type="submit">Place Order (Cash)</button>
+    </form>
+
+    <br />
+    <a href="/cart"><button>Back to Cart</button></a>
+
+  <% } %>
+
 </body>
 </html>
