@@ -9,59 +9,98 @@
 <body>
 <%- include('../partials/nav.ejs') %>
 
-    <h1>Lunch</h1>
+    <h1>Lunch Menu</h1>
 
     <div class="menu-grid">
+
         <div class="menu-card">
-            <img src="/images/lunch-1.jpg" alt="Lunch meal" >
+            <img src="/images/lunch-1.jpg" alt="Healthy Lunch 1" >
+
             <h3>Healthy Lunch 1</h3>
             <p>Balanced and energizing</p>
-                <div class="nutrition">
-        <p><strong>Calories:</strong> 380 kcal</p>
-        <p><strong>Carbs:</strong> 45 g</p>
-        <p><strong>Protein:</strong> 22 g</p>
-    </div>
+            <p>Calories: 350</p>
+            <p>Carbs: 35 g</p>
+            <p>Protein: 22 g</p>
+            <p><strong>Price: 2.500 BHD</strong></p>
+
+
+            <form action="/cart/add" method="POST">
+                <input type="hidden" name="id" value="lunch-1" />
+                <input type="hidden" name="name" value="Lunch Meal 1" />
+                <input type="hidden" name="price" value="2.500" />
+                <input type="hidden" name="image" value="/images/lunch-1.jpg" />
+                <button type="submit">Add to Cart</button>
+            </form>
         </div>
 
 
 
     <div class="menu-card">
-        <img src="/images/lunch-2.jpg" alt="Lunch meal" >
-            <h3>Healthy Lunch 2</h3>
-            <p>High Protein option</p>
-                <div class="nutrition">
-        <p><strong>Calories:</strong> 380 kcal</p>
-        <p><strong>Carbs:</strong> 45 g</p>
-        <p><strong>Protein:</strong> 22 g</p>
-    </div>
-    </div>
+        <img src="/images/lunch-2.jpg" alt="Healthy Lunch 2" >
 
+        <h3>Healthy Lunch 2</h3>
+        <p>High Protein option</p>
+        <p>Calories: 350</p>
+        <p>Carbs: 35 g</p>
+        <p>Protein: 22 g</p>
+        <p><strong>Price: 2.500 BHD</strong></p>
+
+
+    <form action="/cart/add" method="POST">
+        <input type="hidden" name="id" value="lunch-2" />
+        <input type="hidden" name="name" value="Lunch Meal 2" />
+        <input type="hidden" name="price" value="2.500" />
+        <input type="hidden" name="image" value="/images/lunch-2.jpg" />
+        <button type="submit">Add to Cart</button>
+    </form>
+    </div>
 
 
     <div class="menu-card">
-        <img src="/images/lunch-3.jpg" alt="Lunch meal" >
-            <h3>Healthy Lunch 3</h3>
-            <p>Light and nutritious</p>
-                <div class="nutrition">
-        <p><strong>Calories:</strong> 380 kcal</p>
-        <p><strong>Carbs:</strong> 45 g</p>
-        <p><strong>Protein:</strong> 22 g</p>
-    </div>
-    </div>
+        <img src="/images/lunch-3.jpg" alt="Healthy Lunch 3" >
+        <h3>Healthy Lunch 3</h3>
+        <p>Light and nutritious</p>
+        <p>Calories: 350</p>
+        <p>Carbs: 35 g</p>
+        <p>Protein: 22 g</p>
+        <p><strong>Price: 2.500 BHD</strong></p>
 
+
+    <form action="/cart/add" method="POST">
+        <input type="hidden" name="id" value="lunch-3" />
+        <input type="hidden" name="name" value="Lunch Meal 3" />
+        <input type="hidden" name="price" value="2.500" />
+        <input type="hidden" name="image" value="/images/lunch-3.jpg" />
+        <button type="submit">Add to Cart</button>
+    </form>
+    </div>
 
 
     <div class="menu-card">
-        <img src="/images/lunch-4.jpg" alt="Lunch meal" >
-            <h3>Healthy Lunch 4</h3>
-            <p>Perfect start of the day</p>
-                <div class="nutrition">
-        <p><strong>Calories:</strong> 380 kcal</p>
-        <p><strong>Carbs:</strong> 45 g</p>
-        <p><strong>Protein:</strong> 22 g</p>
+        <img src="/images/lunch-4.jpg" alt="Healthy Lunch 4" >
+        <h3>Healthy Lunch 4</h3>
+        <p>Perfect start of the day</p>
+        <p>Calories: 350</p>
+        <p>Carbs: 35 g</p>
+        <p>Protein: 22 g</p>
+        <p><strong>Price: 2.500 BHD</strong></p>
+
+
+    <form action="/cart/add" method="POST">
+        <input type="hidden" name="id" value="lunch-4" />
+        <input type="hidden" name="name" value="Lunch Meal 4" />
+        <input type="hidden" name="price" value="2.500" />
+        <input type="hidden" name="image" value="/images/lunch-4.jpg" />
+        <button type="submit">Add to Cart</button>
+    </form>
     </div>
-    </div>
-  </div>
+
+</div>
+
+<p>
+    <a href="/menu"><button>Back to Menu</button></a>
+    <a href="/cart"><button>Go to Cart</button></a>
+</p>
 
 </body>
 </html>

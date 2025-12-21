@@ -19,6 +19,10 @@ const mealsRoutes = require('./routes/meals.js');
 const menuRoutes = require('./routes/menu.js');
 const pagesRoutes = require('./routes/pages.js');
 const workoutsRoutes = require('./routes/workouts.js');
+const cartRoutes = require('./routes/cart.js');
+const ordersRoutes = require('./routes/orders.js');
+
+
 
 
 
@@ -65,6 +69,11 @@ app.use('/menu', menuRoutes);
 app.use('/', pagesRoutes);
 
 app.use('/workouts', workoutsRoutes);
+
+app.use('/cart', cartRoutes);
+
+app.use('/orders', ordersRoutes);
+
 
 
 

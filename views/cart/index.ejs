@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head.ejs') %>
+  <title>My Cart</title>
+</head>
+<body>
+  <%- include('../partials/nav.ejs') %>
+
+  <h1>My Cart</h1>
+
+  <% if (!cart || cart.items.length === 0) { %>
+    <p>Your cart is empty.</p>
+    <a href="/menu"><button>Back to Menu</button></a>
+  <% } else { %>
+
+    <ul>
+      <% cart.items.forEach(item => { %>
+        <li>
+          <% if (item.image) { %>
+            <img src="<%= item.image %>" alt="<%= item.name %>" style="width:140px; height:90px; object-fit:cover; border-radius:10px;" />
+          <% } %>
+
+          <strong><%= item.name %></strong>
+          — <%= item.qty %> x <%= item.price %> BHD
+          = <strong><%= (item.qty * item.price).toFixed(2) %> BHD</strong>
+
+          <form action="/cart/remove" method="POST" style="display:inline;">
+            <input type="hidden" name="id" value="<%= item.id %>" />
+            <button type="submit">Remove</button>
+          </form>
+        </li>
+      <% }) %>
+    </ul>
+
+    <h2>Total: <%= cart.totalPrice.toFixed(2) %> BHD</h2>
+
+    <p>
+      <a href="/menu"><button>Continue Shopping</button></a>
+      <a href="/orders/Checkout"><button>Checkout (Cash)</button></a>
+    </p>
+
+  <% } %>
+</body>
+</html>

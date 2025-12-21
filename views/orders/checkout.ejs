@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head.ejs') %>
+  <title>Checkout</title>
+</head>
+<body>
+  <%- include('../partials/nav.ejs') %>
+
+  <h1>Checkout</h1>
+
+  <h2>Payment Method: Cash</h2>
+
+  <p><strong>Total:</strong> <%= cart.totalPrice.toFixed(2) %> BHD</p>
+
+  <form action="/orders" method="POST">
+    <label for="deliveryLocation">Delivery Location:</label>
+    <input
+      id="deliveryLocation"
+      name="deliveryLocation"
+      type="text"
+      placeholder="Example: Manama, Building 12, Flat 3"
+      required
+    />
+
+    <button type="submit">Place Order</button>
+  </form>
+
+  <p>
+    <a href="/cart"><button type="button">Back to Cart</button></a>
+  </p>
+</body>
+</html>

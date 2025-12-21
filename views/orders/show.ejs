@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head.ejs') %>
+  <title>Order Confirmed</title>
+</head>
+<body>
+  <%- include('../partials/nav.ejs') %>
+
+  <h1>Order Confirmed</h1>
+
+  <p><strong>Payment:</strong> <%= order.PaymentMethod %></p>
+  <p><strong>Delivery Location:</strong> <%= order.deliveryLocation %></p>
+  <p><strong>Total:</strong> <%= order.totalPrice.toFixed(2) %> BHD</p>
+
+  <h2>Items</h2>
+  <ul>
+    <% order.items.forEach(item => { %> 
+        <li>
+            <strong><%= item.name %></strong>
+            - <%= item.qty %> x <%= item.price %> BHD
+        </li>
+    <% }) %>
+  </ul>
+
+  <p>
+    <a href="/menu"><button>Back to Menu</button></a>
+    <a href="/cart"><button>Go to Cart</button></a>
+  </p>
+</body>
+</html>

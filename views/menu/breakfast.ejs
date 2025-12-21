@@ -12,61 +12,95 @@
     <h1>Breakfast Menu</h1>
 
     <div class="menu-grid">
+
         <div class="menu-card">
-            <img src="/images/breakfast-1.jpg" alt="Breakfast meal" >
+            <img src="/images/breakfast-1.jpg" alt="Healthy Breakfast 1" >
+
             <h3>Healthy Breakfast 1</h3>
             <p>Balanced and energizing</p>
+            <p>Calories: 350</p>
+            <p>Carbs: 35 g</p>
+            <p>Protein: 22 g</p>
+            <p><strong>Price: 2.500 BHD</strong></p>
 
-                <div class="nutrition">
-        <p><strong>Calories:</strong> 380 kcal</p>
-        <p><strong>Carbs:</strong> 45 g</p>
-        <p><strong>Protein:</strong> 22 g</p>
-    </div>
+
+            <form action="/cart/add" method="POST">
+                <input type="hidden" name="id" value="breakfast-1" />
+                <input type="hidden" name="name" value="Breakfast Meal 1" />
+                <input type="hidden" name="price" value="2.500" />
+                <input type="hidden" name="image" value="/images/breakfast-1.jpg" />
+                <button type="submit">Add to Cart</button>
+            </form>
         </div>
 
 
 
     <div class="menu-card">
-        <img src="/images/breakfast-2.jpg" alt="Breakfast meal" >
+        <img src="/images/breakfast-2.jpg" alt="Healthy Breakfast 2" >
+
         <h3>Healthy Breakfast 2</h3>
         <p>High Protein option</p>
+        <p>Calories: 350</p>
+        <p>Carbs: 35 g</p>
+        <p>Protein: 22 g</p>
+        <p><strong>Price: 2.500 BHD</strong></p>
 
-            <div class="nutrition">
-        <p><strong>Calories:</strong> 380 kcal</p>
-        <p><strong>Carbs:</strong> 45 g</p>
-        <p><strong>Protein:</strong> 22 g</p>
-    </div>
-    </div>
 
+    <form action="/cart/add" method="POST">
+        <input type="hidden" name="id" value="breakfast-2" />
+        <input type="hidden" name="name" value="Breakfast Meal 2" />
+        <input type="hidden" name="price" value="2.500" />
+        <input type="hidden" name="image" value="/images/breakfast-2.jpg" />
+        <button type="submit">Add to Cart</button>
+    </form>
+    </div>
 
 
     <div class="menu-card">
-        <img src="/images/breakfast-3.jpg" alt="Breakfast meal" >
+        <img src="/images/breakfast-3.jpg" alt="Healthy Breakfast 3" >
         <h3>Healthy Breakfast 3</h3>
         <p>Light and nutritious</p>
+        <p>Calories: 350</p>
+        <p>Carbs: 35 g</p>
+        <p>Protein: 22 g</p>
+        <p><strong>Price: 2.500 BHD</strong></p>
 
-            <div class="nutrition">
-        <p><strong>Calories:</strong> 380 kcal</p>
-        <p><strong>Carbs:</strong> 45 g</p>
-        <p><strong>Protein:</strong> 22 g</p>
-    </div>
-    </div>
 
+    <form action="/cart/add" method="POST">
+        <input type="hidden" name="id" value="breakfast-3" />
+        <input type="hidden" name="name" value="Breakfast Meal 3" />
+        <input type="hidden" name="price" value="2.500" />
+        <input type="hidden" name="image" value="/images/breakfast-3.jpg" />
+        <button type="submit">Add to Cart</button>
+    </form>
+    </div>
 
 
     <div class="menu-card">
-        <img src="/images/breakfast-4.jpg" alt="Breakfast meal" >
+        <img src="/images/breakfast-4.jpg" alt="Healthy Breakfast 4" >
         <h3>Healthy Breakfast 4</h3>
         <p>Perfect start of the day</p>
+        <p>Calories: 350</p>
+        <p>Carbs: 35 g</p>
+        <p>Protein: 22 g</p>
+        <p><strong>Price: 2.500 BHD</strong></p>
 
-            <div class="nutrition">
-        <p><strong>Calories:</strong> 380 kcal</p>
-        <p><strong>Carbs:</strong> 45 g</p>
-        <p><strong>Protein:</strong> 22 g</p>
+
+    <form action="/cart/add" method="POST">
+        <input type="hidden" name="id" value="breakfast-4" />
+        <input type="hidden" name="name" value="Breakfast Meal 4" />
+        <input type="hidden" name="price" value="2.500" />
+        <input type="hidden" name="image" value="/images/breakfast-4.jpg" />
+        <button type="submit">Add to Cart</button>
+    </form>
     </div>
 
-    </div>
-  </div>
+</div>
+
+<p>
+    <a href="/menu"><button>Back to Menu</button></a>
+    <a href="/cart"><button>Go to Cart</button></a>
+</p>
 
 </body>
 </html>
