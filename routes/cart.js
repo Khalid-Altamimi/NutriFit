@@ -9,7 +9,7 @@ router.use(isSignedIn);
 router.get('/', cartController.index);
 
 
-router.post('/add', cartController.index);
+router.post('/add', cartController.add);
 
 
 router.post('/remove', cartController.remove);

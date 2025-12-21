@@ -22,7 +22,7 @@ const recalcTotal = (cart) => {
       const { id, name, price, image } = req.body;
 
 
-const ParsedPrice = Number(price);
+const ParsedPrice = parseFloat(price);
 if (!id || !name || Number.isNaN(ParsedPrice)) {
     return res.status(400).send('Invalid cart item data');
 }
