@@ -6,6 +6,8 @@ const isSignedIn = require('../middleware/is-signed-in');
 
 router.use(isSignedIn);
 
+router.get('/', ordersController.index); 
+
 router.get('/checkout', ordersController.newCheckout); 
 
 router.post('/', ordersController.createOrder);

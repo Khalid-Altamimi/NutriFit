@@ -85,7 +85,21 @@ const show = async (req, res) => {
     }
 };
 
+const index = async (req, res) => {
+    try {
+        const orders = await Order.find({
+            user: req.session.user._id,
+        }).sort({ createdAt: -1 });
+
+        res.render('orders/index.ejs', { orders });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Error loading orders');
+    }
+};
+
 module.exports = {
+    index,
     newCheckout,
     createOrder,
     show,

@@ -1,0 +1,25 @@
+<h1>My Orders</h1>
+
+<% if (orders.length === 0) { %>
+<p>You have no orders yet.</p>
+<% } else { %>
+    <ul>
+        <% orders.forEach(order => { %>
+            <li>
+            <strong>Order ID:</strong> <%= order._id %><br>
+            <strong>Status:</strong> <%= order.status %><br>
+            <strong>Total:</strong> <%= order.totalPrice.toFixed(3) %> BHD<br>
+
+            <a href="/orders/${order._id}">
+            <button>View Details</button>
+        </a>                
+            </li>
+        <% }) %>
+    </ul>
+<% } %>
+
+
+    <a href="/menu">
+        <button>Back to Menu</button>
+    </a>
+
