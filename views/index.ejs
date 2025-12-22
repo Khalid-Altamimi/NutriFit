@@ -3,32 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
+  <title>NutriFit</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <%- include('partials/nav.ejs') %>
-  <h1>NutriTrack</h1>
+
+  <h1>NutriFit</h1>
   
   <% if (user) { %>
-    <h2>Welcome to the app, <%= user.username %>!</h2>
+    <h2>Welcome, <%= user.username %>!</h2>
+
     <p class="description">
-      NutriTrack helps you keep track of daily meals and calories.<br>
-      Add new meals, edit them, and review your nutrition history to stay healthy.
+      NutriFit is a smart health and fitness platform that helps you manage your meals,
+      track your nutrition, and order healthy food with ease.<br>
+      Browse healthy menus, add meals to your cart, place orders, and keep track of your
+      fitness journey — all in one place.
     </p>
     
-    <p>
-      <a href="/meals"><button>Go to meals</button></a>
-      <a href="/auth/sign-out"><button>Sign out</button></a>
-      <a href="/workouts"><button>Go to FitTrack</button></a>
-    </p>
     <% } else { %>
       
-      <h2>Welcome to the app, guest.</h2>
-      <p class="description">
-        NutriTrack helps you keep track of daily meals and calories.<br>
-        Add new meals, edit them, and review your nutrition history to stay healthy.
-      </p>
+      <h2>Welcome to NutriFit!</h2>
+
+    <p class="description">
+      NutriFit is a smart health and fitness platform that helps you manage your meals,
+      track your nutrition, and order healthy food with ease.<br>
+      Create an account to start tracking your meals, exploring healthy menus, and placing orders.
+    </p>
+
       <p>
         <a href="/auth/sign-up"><button>Sign up</button></a>
         <a href="/auth/sign-in"><button>Sign in</button></a>
@@ -36,8 +38,15 @@
       <% } %>
       
       
-      <div class="imageContainer">
-        <img src="https://img.freepik.com/premium-vector/fresh-green-red-apple-slices-white-background-healthy-eating-concept_1323048-102468.jpg" />
+      <div class="home-images">
+        <img 
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5WCKvoTb8TJqfz_nSF7lfxH5XYDBxJh4COw&s"
+        alt="Healthy food illustration" 
+        />
+        <img 
+        src="https://media.istockphoto.com/id/1592210966/photo/happy-black-man-running-in-park-with-music-smile-and-mockup-in-nature-garden-and-workout.jpg?s=612x612&w=0&k=20&c=pkxEU_3g0-ClVb95hCZYxeVK5QrWFoY5J4uoES9seM8="
+        alt="Fitness illustration" 
+        />
       </div>
 </body>
 </html>
