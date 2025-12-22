@@ -1,7 +1,8 @@
 <h1>My Orders</h1>
 
-<% if (orders.length === 0) { %>
+<% if (!orders || orders.length === 0) { %>
 <p>You have no orders yet.</p>
+<a href="/menu"><button>Back to Menu</button></a>
 <% } else { %>
     <ul>
         <% orders.forEach(order => { %>
@@ -9,17 +10,22 @@
             <strong>Order ID:</strong> <%= order._id %><br>
             <strong>Status:</strong> <%= order.status %><br>
             <strong>Total:</strong> <%= order.totalPrice.toFixed(3) %> BHD<br>
+            <strong>Date:</strong> <%= new Date(order.createdAt).toLocaleString() %><br>
 
-            <a href="/orders/${order._id}">
+            <a href="/orders/<%= order._id %>">
             <button>View Details</button>
-        </a>                
+        </a>
+        <% if (order.status === 'Pending') { %>
+            <form  action="/orders/<%= order._id %>/cancel" method="POST" style="display: inline;">
+                <button type="submit">Cancel</button>
+            </form>
+        <% } %>                
             </li>
         <% }) %>
     </ul>
+
+        <a href="/menu"><button>Back to Menu</button></a>
+
 <% } %>
 
-
-    <a href="/menu">
-        <button>Back to Menu</button>
-    </a>
 

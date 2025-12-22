@@ -14,6 +14,9 @@ router.post('/', ordersController.createOrder);
 
 router.get('/:id', ordersController.show); 
 
+router.post('/:id/cancel', ordersController.cancel); 
+
+
 
 
 module.exports = router;

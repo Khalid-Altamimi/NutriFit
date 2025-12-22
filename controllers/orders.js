@@ -98,9 +98,34 @@ const index = async (req, res) => {
     }
 };
 
+
+const cancel = async (req, res) => {
+    try {
+        const order = await Order.findOne({
+            _id: req.params.id,
+            user: req.session.user._id,
+        });
+
+        if(!order) return res.redirect('/orders');
+
+        if(order.status !== 'Pending') {
+            return res.redirect(`/orders/${order._id}`);
+        }
+
+        order.status = 'Cancelled';
+        await order.save();
+
+        return res.redirect(`/orders/${order._id}`);
+    } catch (err) {
+        console.error(err);
+        res.status(400).send('Error cancelling order');
+    }
+};
+
 module.exports = {
     index,
     newCheckout,
     createOrder,
     show,
+    cancel,
 };

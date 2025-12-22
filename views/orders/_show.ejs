@@ -1,0 +1,37 @@
+<h1>Order Confirmed</h1>
+
+  <p><strong>Order ID:</strong> <%= order._id %></p>
+  <p><strong>Status:</strong> <%= order.status %></p>
+  <p><strong>Payment:</strong> <%= order.PaymentMethod %></p>
+  <p><strong>Delivery Location:</strong> <%= order.deliveryLocation %></p>
+
+
+  <h2>Items</h2>
+  <ul>
+    <% order.items.forEach(item => { %> 
+        <li>
+            <div style="display: flex; gap: 12px; align-items: center;">
+                <% if (item.image) { %>
+                <img src="<%= item.image %>" alt="<%= item.name %>" style="width: 70px; height:70px; object-fit: cover; border-radius: 10px;">
+                <% } %>
+
+            </div>
+            <strong><%= item.name %></strong><br>
+            Qty: <%= item.qty %> |
+            Price: <%= Number(item.price).toFixed(3) %> BHD |
+            Subtotal: <%= (Number(item.price) * Number(item.qty)).toFixed(3) %> BHD
+        </div>
+    </div>
+        </li>
+    <% }) %>
+  </ul>
+
+  <h2>Total: <%= order.totalPrice.toFixed(3) %> BHD</h2>
+
+  <% if (order.status === 'Pending') { %>
+    <form action="/orders/<%= order._id %>/cancel" method="POST" style="display: inline;">
+        <button type="submit">Cancel Order</button>
+    </form>
+<% } %>
+    <a href="/orders"><button>My Orders</button></a>
+    <a href="/menu"><button>Back to Menu</button></a>

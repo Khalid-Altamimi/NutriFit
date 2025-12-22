@@ -22,7 +22,7 @@ const orderSchema = new mongoose.Schema(
         paymentMethod: { type: String, enum: ['Cash'], default: 'Cash' },
 
         deliveryLocation: { type: String, required: true, trim: true },
-        status: { type: String, default: 'Pending'},
+        status: { type: String, enum: ['Pending', 'Cancelled', 'Completed'], default: 'Pending'},
     },
     { timestamps: true }
 );
