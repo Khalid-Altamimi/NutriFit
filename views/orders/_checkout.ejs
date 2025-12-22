@@ -1,0 +1,35 @@
+<h1>Checkout</h1>
+<p><strong>Payment Method:</strong>Cash</p>
+
+  <h2>Order Summary</h2>
+
+  <% if (cart.items.length > 0) { %>
+    <ul>
+      <% cart.items.forEach(item => { %>
+        <li>
+          <strong><%= item.name %></strong>
+           (x<%= item.qty %>) -
+           <%= (Number(item.price) * Number(item.qty)).toFixed(3) %> BHD
+        </li>
+        <% }) %>
+    </ul>
+    <% } else { %>
+      <p>Your cart is empty.</p>
+      <% } %>
+
+    <h2>Total: <%=Number(cart.totalPrice).toFixed(3) %> BHD</h2>
+
+          <form action="/orders" method="POST">
+            <label for="deliveryLocation">Delivery Location</label>
+
+            <input
+             id="deliveryLocation" type="text" name="deliveryLocation" placeholder="e.g. Manama, Block 123, Road 45" required />
+            <button type="submit">Place Order</button>
+           </form>
+
+           <a href="/cart"><button type="button">Back to Cart</button></a>
+
+
+              
+</body>
+</html>

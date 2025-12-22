@@ -9,7 +9,7 @@ const ensureCart = (req) => {
 const recalcTotal = (cart) => {
     cart.totalPrice = cart.items.reduce((sum, item) => {
         const price = Number(item.price) || 0;
-        const qty = Number (item.qty) || 0;
+        const qty = Number(item.qty) || 0;
         return sum + price * qty;
     }, 0);
 };
@@ -27,17 +27,14 @@ const recalcTotal = (cart) => {
     const createOrder = async (req, res) => {
       ensureCart(req);
 
-      const cart = req.session.cart;
-      recalcTotal(cart);
-
-
       const { deliveryLocation } = req.body;
-
-      if (!cart.items.length) return res.redirect('/cart');
 
       if (!req.session.user || !req.session.user._id) {
         return res.redirect('/auth/sign-in');
       }
+
+      if (!cart.items.length) return res.redirect('/cart');
+
 
       if (!deliveryLocation || !deliveryLocation.trim()) {
         return res.status(400).send('Delivery location is required');
@@ -49,8 +46,10 @@ const recalcTotal = (cart) => {
             items: cart.items.map((item) => ({
             id: item.id,
             name: item.name,
-            price: Number(item.qty),
+            price: Number(item.price) || 0,
             image: item.image || '',
+            qty: Number(item.qty) || 1,
+
         })),
             totalPrice: cart.totalPrice,
             paymentMethod: 'Cash',
@@ -60,7 +59,7 @@ const recalcTotal = (cart) => {
 
         req.session.cart = { items: [], totalPrice: 0 };
 
-        return res.redirect(`/orders/${order._id}`);
+        res.redirect(`/orders/${order._id}`);
       } catch (err) {
         res.status(400).send('Error placing order');
       }

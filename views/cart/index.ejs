@@ -3,42 +3,47 @@
 <head>
   <%- include('../partials/head.ejs') %>
   <title>My Cart</title>
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
   <%- include('../partials/nav.ejs') %>
 
   <h1>My Cart</h1>
 
-  <% if (!cart || cart.items.length === 0) { %>
+  <% if (!cart || !cart.items.length === 0) { %>
     <p>Your cart is empty.</p>
     <a href="/menu"><button>Back to Menu</button></a>
   <% } else { %>
 
     <ul>
       <% cart.items.forEach(item => { %>
-        <li>
+        <li style="display: flex; align-items: center; gap: 14px; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 14px;">
           <% if (item.image) { %>
             <img src="<%= item.image %>" alt="<%= item.name %>" style="width:140px; height:90px; object-fit:cover; border-radius:10px;" />
           <% } %>
 
-          <strong><%= item.name %></strong>
-          — <%= item.qty %> x <%= item.price %> BHD
-          = <strong><%= (item.qty * item.price).toFixed(2) %> BHD</strong>
+          <div>
+          <strong><%= item.name %></strong><br />
+          <span>Price: <%= item.price.toFixed ? item.price.toFixed(3) : item.price %> BHD</span><br />
+          <span>Qty: <%= item.qty %></span>
+          </div>
+          </div>
 
+        <div style="display: flex; align-items: center; gap: 10px;">
           <form action="/cart/remove" method="POST" style="display:inline;">
             <input type="hidden" name="id" value="<%= item.id %>" />
             <button type="submit">Remove</button>
           </form>
+        </div>
         </li>
       <% }) %>
     </ul>
 
-    <h2>Total: <%= cart.totalPrice.toFixed(2) %> BHD</h2>
+    <h2>Total: <%= cart.totalPrice.toFixed ? cart.totalPrice.toFixed(3) : cart.totalPrice %> BHD</h2>
 
-    <p>
-      <a href="/menu"><button>Continue Shopping</button></a>
       <a href="/orders/Checkout"><button>Checkout (Cash)</button></a>
-    </p>
+      <a href="/menu"><button>Continue Shopping</button></a>
 
   <% } %>
 </body>
