@@ -48,7 +48,17 @@ NutriFit is a web-based health management application that combines meal trackin
 My App Link:http://localhost:3000/meals
 
 Attributions:
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5WCKvoTb8TJqfz_nSF7lfxH5XYDBxJh4COw&s
+
+https://media.istockphoto.com/id/1592210966/photo/happy-black-man-running-in-park-with-music-smile-and-mockup-in-nature-garden-and-workout.jpg?s=612x612&w=0&k=20&c=pkxEU_3g0-ClVb95hCZYxeVK5QrWFoY5J4uoES9seM8=
+
+https://www.pexels.com/search/sandwiches/
+
+
 
 Technologies Used: -CSS -Javascript -Html
 
 Next steps: 
+-I would like to add a page for the favorites, so the user can add his favorite meal.
+-I will include a Fat in all meals so it will be (Calories - Carbs - Protein - Fat).
+-I would do a page for the user goals, So he can type his goals with the date of typing this goal, And try to achieve it, and when he does the user will put a tick on his goal.
