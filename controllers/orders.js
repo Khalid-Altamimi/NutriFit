@@ -27,6 +27,9 @@ const recalcTotal = (cart) => {
     const createOrder = async (req, res) => {
       ensureCart(req);
 
+    const cart = req.session.cart;
+    recalcTotal(cart);  
+
       const { deliveryLocation } = req.body;
 
       if (!req.session.user || !req.session.user._id) {
