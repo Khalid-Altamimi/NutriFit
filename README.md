@@ -27,6 +27,11 @@ As a user, I want to change item quantities in the cart so that I can order the 
 As a user, I want to remove items from the cart so that I can update my order before checkout.
 
 
+![App Page](./public/images/app page.png)
+
+My App Link:http://localhost:3000/menu
+
+
 ![ERD](./public/images/pic11.png)
 ![ERD](./public/images/pic22.png)
 
@@ -45,7 +50,7 @@ As a user, I want to remove items from the cart so that I can update my order be
 
 NutriFit is a web-based health management application that combines meal tracking, fitness activity tracking, and a healthy restaurant menu into one system. The platform allows users to securely create accounts, log daily meals and nutritional values, track workouts, and browse categorized healthy meals with detailed information. Users can also place food orders using cash payment and receive confirmation notifications. By integrating these features in a simple and user-friendly interface, NutriFit helps users manage their nutrition and fitness goals effectively, making it suitable as a practical and professional graduation project.
 
-My App Link:http://localhost:3000/meals
+
 
 Attributions:
 https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5WCKvoTb8TJqfz_nSF7lfxH5XYDBxJh4COw&s
