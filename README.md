@@ -27,7 +27,7 @@ As a user, I want to change item quantities in the cart so that I can order the 
 As a user, I want to remove items from the cart so that I can update my order before checkout.
 
 
-![App Page](./public/images/app page.png)
+![App Page](./public/images/apppage.png)
 
 My App Link:http://localhost:3000/menu
 
